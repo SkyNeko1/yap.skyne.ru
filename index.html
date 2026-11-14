@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="refresh" content="10;url=https://yapanoripper.github.io">
+<title>YaPanoRipper - Сервис переехал</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Bebas+Neue&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: #04080f;
+  color: #c8ddf0;
+  font-family: 'JetBrains Mono', monospace;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.box {
+  max-width: 600px;
+  width: 100%;
+  background: #080e1a;
+  border: 1px solid rgba(0, 180, 255, 0.3);
+  box-shadow: 0 0 50px rgba(0, 180, 255, 0.15);
+  padding: 36px 28px;
+  border-radius: 8px;
+  text-align: center;
+}
+.badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: rgba(255, 51, 85, 0.15);
+  border: 1px solid #ff3355;
+  color: #ff3355;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 34px;
+  letter-spacing: 0.1em;
+  background: linear-gradient(90deg, #00b4ff, #00e5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+}
+p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #c8ddf0;
+  margin-bottom: 20px;
+}
+.link {
+  display: block;
+  padding: 14px 20px;
+  background: #0c1422;
+  border: 1px solid #00b4ff;
+  color: #00e5ff;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+  word-break: break-all;
+}
+.timer {
+  margin-top: 24px;
+  font-size: 12px;
+  color: #7a8fa6;
+}
+.timer span {
+  color: #00ff88;
+  font-size: 18px;
+  font-weight: bold;
+}
+.bar-wrap {
+  margin-top: 12px;
+  width: 100%;
+  height: 4px;
+  background: #0c1422;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.bar {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #00b4ff, #00ff88);
+  transition: width 1s linear;
+}
+.btn {
+  margin-top: 28px;
+  display: inline-block;
+  padding: 12px 32px;
+  background: transparent;
+  border: 1px solid #00b4ff;
+  color: #00b4ff;
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="badge">Внимание / Notice</div>
+  <h1>МЫ ПЕРЕЕХАЛИ НА НОВЫЙ АДРЕС</h1>
+  <p>Сервис <strong>YaPanoRipper</strong> больше не обслуживается на этом домене.<br>Новый постоянный адрес:</p>
+  <a class="link" href="https://yapanoripper.github.io">https://yapanoripper.github.io</a>
+  <div class="timer">Автоматический переход через <span id="sec">10</span> сек...</div>
+  <div class="bar-wrap"><div class="bar" id="bar"></div></div>
+  <a class="btn" href="https://yapanoripper.github.io">Перейти сейчас</a>
+</div>
+<script>
+var s = 10;
+var el = document.getElementById('sec');
+var bar = document.getElementById('bar');
+var t = setInterval(function() {
+  s--;
+  if (el) el.textContent = s;
+  if (bar) bar.style.width = (s * 10) + '%';
+  if (s <= 0) {
+    clearInterval(t);
+    window.location.replace('https://yapanoripper.github.io');
+  }
+}, 1000);
+</script>
+</body>
+</html>
